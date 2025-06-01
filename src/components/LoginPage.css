@@ -1,0 +1,106 @@
+.login-container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Make sure it takes at least the full viewport height */
+    width: 100%; /* Ensure it takes full width */
+    /* background-color: #121212; /* This should be on body now */
+    /* color: #FFFFFF; /* This should be inherited from body */
+    /* font-family: 'Roboto', sans-serif; /* This should be inherited from body */
+}
+.login-container {
+    background-color: #1E1E1E;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+.logo {
+    margin-bottom: 1.5rem;
+}
+.logo img { /* If using an actual image */
+    width: 100px;
+    height: auto;
+}
+.logo div { /* For placeholder text */
+    padding: 20px;
+    border: 1px dashed #444;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+h1 {
+    color: #FFFFFF;
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #B0B0B0;
+    font-size: 14px;
+}
+.form-group input {
+    width: 100%; /* Will be slightly less due to padding if box-sizing is not border-box */
+    box-sizing: border-box; /* Add this for easier width management */
+    padding: 0.75rem;
+    border: 1px solid #444;
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.login-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #F47C34;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.login-button:hover {
+    background-color: #FFB380;
+}
+.forgot-password {
+    display: block;
+    margin-top: 1rem;
+    color: #B0B0B0;
+    text-decoration: none;
+    font-size: 14px;
+}
+.support-text {
+    margin-top: 2rem;
+    color: #B0B0B0;
+    font-size: 12px;
+}
+
+.api-feedback {
+    margin-top: 1rem;
+    font-size: 14px;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.api-feedback.success {
+    color: #155724; /* Dark green text */
+    background-color: #d4edda; /* Light green background */
+    border: 1px solid #c3e6cb; /* Green border */
+}
+
+.api-feedback.error {
+    color: #721c24; /* Dark red text */
+    background-color: #f8d7da; /* Light red background */
+    border: 1px solid #f5c6cb; /* Red border */
+}
+.copyright {
+    margin-top: 1rem;
+    color: #B0B0B0;
+    font-size: 12px;
+}

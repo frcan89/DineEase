@@ -1,11 +1,27 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    margin: 0;
+    color: #FFFFFF;
+    /* display: flex; justify-content: center; align-items: center; height: 100vh; */ /* These were commented out as they might be too aggressive for global body style */
+}
+
+/* If you want to ensure the app itself takes full height and can center content: */
+#root, .App { /* Assuming your React app mounts to 'root' and App.jsx has a class 'App' */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Or row, depending on layout */
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family is now set on body, system-ui is fallback if Roboto fails */
+  font-family: 'Roboto', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: dark; /* Setting to dark as background is dark */
+  /* color is now set on body */
+  /* background-color is now set on body */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,23 +31,26 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #646cff; /* Default link color, can be overridden by component styles */
   text-decoration: inherit;
 }
 a:hover {
   color: #535bf2;
 }
 
+/* body specific styles from original index.css - some are now handled by the new body or #root/.App rules */
+/*
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
+  margin: 0; // Already set
+  display: flex; // Potentially handled by #root/.App or component-specific wrappers
+  place-items: center; // Potentially handled by #root/.App or component-specific wrappers
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100vh; // Already set by #root
 }
+*/
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3.2em; /* This is a very large h1, might need adjustment per component */
   line-height: 1.1;
 }
 
@@ -41,10 +60,11 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
+  font-family: inherit; /* Will inherit Roboto */
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: #FFFFFF; /* Ensure button text is visible on dark background */
 }
 button:hover {
   border-color: #646cff;
@@ -54,6 +74,9 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Media query for light theme is removed as the primary theme is dark. */
+/* If light theme is needed, it should be re-evaluated. */
+/*
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -66,3 +89,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+*/
