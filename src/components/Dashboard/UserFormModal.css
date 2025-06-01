@@ -1,0 +1,174 @@
+/* src/components/Dashboard/UserFormModal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de otros contenidos */
+    padding: 20px; /* Para pantallas pequeñas */
+}
+
+.modal-content {
+    background-color: #1E1E1E;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 600px; /* Ancho máximo del modal */
+    max-height: 90vh; /* Altura máxima, permite scroll si es necesario */
+    overflow-y: auto; /* Scroll si el contenido es muy largo */
+    position: relative;
+    color: #FFFFFF;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #B0B0B0;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+}
+.modal-close-btn:hover {
+    color: #F47C34;
+}
+
+.modal-content h2 {
+    color: #F47C34;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.modal-error-message {
+    background-color: rgba(255, 82, 82, 0.1);
+    color: #FF5252;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid #FF5252;
+    font-size: 14px;
+}
+
+.modal-content form .form-row {
+    display: flex;
+    gap: 20px; /* Espacio entre campos en la misma fila */
+    margin-bottom: 15px;
+}
+.modal-content form .form-row .form-group {
+    flex: 1; /* Para que los campos en la fila ocupen el mismo espacio */
+    margin-bottom: 0; /* Quitar margen inferior si están en form-row */
+}
+
+
+.modal-content form .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-content form .form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #B0B0B0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.modal-content form .form-group input[type="text"],
+.modal-content form .form-group input[type="email"],
+.modal-content form .form-group input[type="password"],
+.modal-content form .form-group input[type="tel"],
+.modal-content form .form-group input[type="number"],
+.modal-content form .form-group select,
+.modal-content form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box; /* Importante para que el padding no aumente el ancho */
+}
+.modal-content form .form-group input:focus,
+.modal-content form .form-group select:focus,
+.modal-content form .form-group textarea:focus {
+    border-color: #F47C34;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(244, 124, 52, 0.3);
+}
+
+.modal-content form .form-group textarea {
+    resize: vertical; /* Permitir redimensionar verticalmente */
+    min-height: 60px;
+}
+
+.modal-content form .form-group-checkbox {
+    display: flex;
+    align-items: center;
+}
+.modal-content form .form-group-checkbox input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    accent-color: #F47C34; /* Color del checkbox */
+}
+.modal-content form .form-group-checkbox label {
+    margin-bottom: 0; /* Ajustar label del checkbox */
+    font-weight: normal;
+}
+
+.form-error {
+    color: #FF5252;
+    font-size: 12px;
+    display: block;
+    margin-top: 4px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #444;
+}
+
+.modal-actions button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.modal-actions .btn-cancel {
+    background-color: #444;
+    color: #FFFFFF;
+}
+.modal-actions .btn-cancel:hover {
+    background-color: #555;
+}
+
+.modal-actions .btn-save {
+    background-color: #F47C34;
+    color: #FFFFFF;
+}
+.modal-actions .btn-save:hover {
+    background-color: #FFB380;
+}
+.modal-actions button:disabled {
+    background-color: #2D2D2D;
+    color: #666;
+    cursor: not-allowed;
+}

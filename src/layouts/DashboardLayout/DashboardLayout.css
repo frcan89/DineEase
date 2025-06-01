@@ -1,0 +1,225 @@
+/* src/layouts/DashboardLayout/DashboardLayout.css */
+/* O puedes poner esto en un App.css o index.css si quieres que aplique a todo el body */
+body.dashboard-body { /* Aplicar a un div wrapper o directamente al body */
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Aseguramos que el layout principal sea flex */
+    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+.dashboard-layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 250px;
+    background-color: #1E1E1E;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ocupa toda la altura */
+    position: fixed; /* Para que se mantenga fijo al hacer scroll */
+    left: 0;
+    top: 0;
+}
+
+.sidebar-logo h2 {
+    color: #F47C34;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 15px;
+}
+
+.sidebar-nav a {
+    color: #B0B0B0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active { /* Clase para el enlace activo */
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+}
+
+.sidebar-nav a svg { /* Estilo para los iconos de react-icons */
+    margin-right: 10px;
+    font-size: 1.2em; /* Ajusta el tamaño del icono */
+}
+
+/* --- Main Content Area --- */
+.main-content-area {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 250px; /* Mismo ancho que el sidebar */
+    overflow-y: auto; /* Para scroll si el contenido es largo */
+}
+
+/* --- Header --- */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.notifications {
+    position: relative;
+    cursor: pointer;
+}
+
+.notifications svg { /* Estilo para el icono de campana */
+    font-size: 24px;
+    color: #B0B0B0;
+}
+
+.notifications .badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #F47C34;
+    color: #FFFFFF;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* --- Summary Cards --- */
+.summary-cards-container {
+    display: flex;
+    gap: 20px; /* Espacio entre tarjetas */
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Para que se ajusten en pantallas pequeñas */
+}
+
+.summary-card {
+    background-color: #1E1E1E;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1; /* Para que ocupen espacio similar */
+    min-width: 250px; /* Ancho mínimo antes de envolver */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.summary-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #F47C34;
+    font-size: 16px;
+}
+
+.summary-card p {
+    font-size: 28px;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* --- Charts --- */
+.charts-container {
+    display: flex;
+    gap: 20px; /* Espacio entre gráficos */
+    flex-wrap: wrap; /* Para que se ajusten */
+}
+
+.chart-card {
+    background-color: #1E1E1E;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1; /* Para que ocupen espacio similar */
+    min-width: 300px; /* Ancho mínimo antes de envolver */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    min-height: 200px; /* Altura mínima para visualización */
+}
+
+.chart-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #F47C34;
+    font-size: 18px;
+}
+
+.chart-card .chart-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* Ajusta según necesidad */
+    color: #666;
+    border: 1px dashed #444;
+    border-radius: 4px;
+}
+
+.sidebar {
+    /* ... (tus estilos existentes) ... */
+    display: flex;
+    flex-direction: column; /* Ya debería estar así para el logo y nav */
+}
+
+.sidebar-nav {
+    flex-grow: 1; /* Hace que la navegación ocupe el espacio disponible, empujando el logout hacia abajo */
+}
+
+.sidebar-logout {
+    margin-top: auto; /* Empuja el botón de logout al final del sidebar si .sidebar-nav no usa flex-grow */
+    padding-top: 20px; /* Espacio arriba del botón */
+    border-top: 1px solid #2D2D2D; /* Línea separadora opcional */
+}
+
+.logout-button {
+    background-color: transparent; /* O un color que desees */
+    color: #B0B0B0;
+    border: 1px solid #B0B0B0; /* O sin borde, o un borde más sutil */
+    padding: 10px 15px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    font-size: 1em; /* Mismo tamaño que los items del menú */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.logout-button:hover {
+    background-color: #c9302c; /* Un color rojo para indicar acción destructiva o de salida */
+    color: #FFFFFF;
+    border-color: #c9302c;
+}
+
+.logout-button svg {
+    margin-right: 10px;
+    font-size: 1.2em; /* Mismo tamaño que los iconos del menú */
+}

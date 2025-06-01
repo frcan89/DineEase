@@ -1,0 +1,174 @@
+/* src/pages/UsersPage/UsersPage.css */
+/* Si los estilos de body ya están globales en index.css o App.css, no los repitas */
+/* .users-page-body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+} */
+
+.users-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px; /* Añadido para que no esté pegado a los bordes del main-content-area */
+}
+
+.users-container h1 { /* Sobreescribe el H1 del Header si es necesario, o usa un H2 */
+    color: #FFFFFF;
+    text-align: center; /* El Header del Dashboard ya centra el título */
+    margin-bottom: 20px; /* Añadido para separar del botón */
+}
+
+.users-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.create-user-btn {
+    background-color: #F47C34;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    /* margin-bottom: 20px; */ /* Se maneja por users-header-actions */
+    /* display: block; */ /* No necesario con flex */
+    /* width: 200px; */ /* O auto si quieres que se ajuste al texto */
+    /* margin-left: auto; */ /* Se maneja por users-header-actions */
+    /* margin-right: 0; */ /* Se maneja por users-header-actions */
+    transition: background-color 0.3s ease;
+}
+
+.create-user-btn:hover {
+    background-color: #FFB380;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #1E1E1E; /* Fondo base para la tabla */
+    border-radius: 8px; /* Bordes redondeados para la tabla */
+    overflow: hidden; /* Para que el border-radius aplique a th/td */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.users-table th, 
+.users-table td {
+    padding: 12px 15px; /* Ajuste de padding */
+    text-align: left;
+    border-bottom: 1px solid #2d2d2d; /* Borde más sutil */
+}
+
+.users-table th {
+    background-color: #2a2a2a; /* Un poco más oscuro para cabeceras */
+    color: #F47C34;
+    font-weight: 500;
+    text-transform: uppercase; /* Opcional */
+    font-size: 14px; /* Opcional */
+}
+
+/* Quitar el fondo de nth-child si la tabla ya tiene fondo #1E1E1E */
+/* .users-table tr:nth-child(even) {
+    background-color: #1E1E1E; 
+} */
+
+.users-table tr:hover {
+    background-color: #333333;
+}
+.users-table tr:last-child td {
+    border-bottom: none; /* Quitar borde inferior de la última fila */
+}
+
+
+.action-btn-group {
+    display: flex;
+    gap: 8px; /* Espacio entre botones de acción */
+}
+
+.action-btn {
+    background-color: #444;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    /* margin-right: 5px; */ /* Reemplazado por gap en action-btn-group */
+    font-size: 13px;
+    transition: background-color 0.2s ease;
+}
+
+.edit-btn {
+    background-color: #F47C34; /* Ya está en el HTML, no hace falta el !important */
+}
+.edit-btn:hover {
+    background-color: #FFB380;
+}
+
+.delete-btn {
+    background-color: #FF5252; /* Ya está en el HTML, no hace falta el !important */
+}
+.delete-btn:hover {
+    background-color: #ff7b7b;
+}
+
+.restore-btn { /* Para el botón de restaurar (si lo añades) */
+    background-color: #5cb85c; /* Verde */
+}
+.restore-btn:hover {
+    background-color: #4cae4c;
+}
+
+
+/* Estilos para la paginación (simplificado por ahora) */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-controls button {
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    border: 1px solid #444;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.2s ease;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+    background-color: #F47C34;
+    border-color: #F47C34;
+}
+
+.pagination-controls button:disabled {
+    background-color: #2D2D2D;
+    color: #666;
+    cursor: not-allowed;
+    border-color: #444;
+}
+
+.pagination-info {
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+/* Para loading y error states */
+.loading-message, .error-message-users {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #B0B0B0;
+}
+.error-message-users {
+    color: #FF5252;
+}

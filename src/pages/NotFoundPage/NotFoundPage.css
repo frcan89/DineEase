@@ -1,0 +1,56 @@
+/* src/pages/NotFoundPage/NotFoundPage.css */
+
+.notfound-page-body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Asegura que ocupe toda la altura */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.notfound-container {
+    max-width: 600px;
+    padding: 20px;
+}
+
+.notfound-container h1 {
+    font-size: 100px; /* Puede ser muy grande, ajusta si es necesario */
+    margin: 0 0 10px 0; /* Ajuste de margen */
+    color: #F47C34;
+    line-height: 1; /* Para controlar la altura de línea del texto grande */
+}
+
+.notfound-container h2 {
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.notfound-container p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #B0B0B0; /* Un color un poco más suave para el texto */
+}
+
+.notfound-btn {
+    display: inline-block;
+    background-color: #F47C34;
+    color: #FFFFFF;
+    padding: 12px 25px; /* Un poco más de padding */
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500; /* Un poco más de peso */
+    transition: background-color 0.3s ease;
+}
+
+.notfound-btn:hover {
+    background-color: #FFB380; /* Color de hover del HTML original */
+    color: #FFFFFF; /* Aseguramos el color del texto en hover */
+}

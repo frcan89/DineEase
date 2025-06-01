@@ -1,0 +1,124 @@
+/* src/pages/LoginPage/LoginPage.css */
+.login-page-body { /* Renombramos body para aplicarlo a un div contenedor si es necesario, o lo aplicamos al body global en App.css/index.css */
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1280px; /* Ancho máximo para pantallas grandes */
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #FFFFFF;
+    box-sizing: border-box; /* Añadido para mejor manejo de padding/border */
+}
+
+.login-container {
+    background-color: #1E1E1E;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: 1.5rem;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.login-container h1 {
+    color: #FFFFFF;
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #B0B0B0;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: calc(100% - 1.5rem); /* Ajuste para padding */
+    padding: 0.75rem;
+    border: 1px solid #444;
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.login-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #F47C34;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #FFB380;
+}
+
+.login-button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 1rem;
+    color: #B0B0B0;
+    text-decoration: none;
+    font-size: 14px;
+}
+.forgot-password:hover {
+    color: #F47C34;
+}
+
+.support-text {
+    margin-top: 2rem;
+    color: #B0B0B0;
+    font-size: 12px;
+}
+
+.support-text a {
+    color: #F47C34;
+    text-decoration: none;
+}
+.support-text a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 1rem;
+    color: #B0B0B0;
+    font-size: 12px;
+}
+
+.error-message {
+    background-color: #5c1a1a;
+    color: #f2c4c4;
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-size: 14px;
+    border: 1px solid #a33a3a;
+}
