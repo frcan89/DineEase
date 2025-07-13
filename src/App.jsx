@@ -7,6 +7,7 @@ import DashboardHomePage from './pages/DashboardPage/DashboardHomePage'; // Impo
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage'; // <--- IMPORTA LA PÁGINA 404
 import { isLoggedIn } from './services/authService';
 import UsersPage from './pages/UsersPage/UsersPage'; 
+import ProductsPage from './pages/ProductsPage/ProductsPage';
 
 // Componente para Rutas Protegidas
 const ProtectedRoute = ({ children }) => {
@@ -43,6 +44,7 @@ function App() {
         >
           <Route index element={<DashboardHomePage />} />
           <Route path="usuarios" element={<UsersPage />} />
+          <Route path="productos" element={<ProductsPage />} />
           {/* <Route path="reservas" element={<ReservasPage />} /> */}
           {/* ... otras rutas del dashboard */}
         </Route>

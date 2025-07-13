@@ -2,7 +2,7 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom'; // Importa useNavigate
 import {
-    FaHome, FaUtensils, FaCalendarAlt, FaBook, FaChartBar, FaCog, FaSignOutAlt, FaUserAlt} from 'react-icons/fa';
+    FaHome, FaUtensils, FaCalendarAlt, FaBook, FaChartBar, FaCog, FaSignOutAlt, FaUserAlt, FaBoxOpen} from 'react-icons/fa';
 import { logout as authLogout } from '../../services/authService'; // Importa tu función de logout
 
 // Estilos: asume que los estilos del sidebar están en DashboardLayout.css o en un Sidebar.css dedicado
@@ -10,6 +10,7 @@ import { logout as authLogout } from '../../services/authService'; // Importa tu
 
 const menuItems = [
     { path: '/dashboard', icon: <FaHome />, label: 'Inicio' },
+    { path: '/dashboard/productos', icon: <FaBoxOpen />, label: 'Productos' },
     { path: '/dashboard/pedidos', icon: <FaUtensils />, label: 'Pedidos' },
     { path: '/dashboard/reservas', icon: <FaCalendarAlt />, label: 'Reservas' },
     { path: '/dashboard/menu', icon: <FaBook />, label: 'Menú' },

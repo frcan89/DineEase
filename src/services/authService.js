@@ -75,3 +75,20 @@ export const isLoggedIn = () => {
     // Aquí podrías añadir una verificación de expiración del token si lo deseas
     return !!token;
 };
+
+/**
+ * Obtiene el ID del restaurante del usuario actualmente logueado.
+ * @returns {number|null} - El ID del restaurante o null.
+ */
+export const getUserRestaurantId = () => {
+    const user = getCurrentUser();
+    // La API de usuarios muestra 'id_restaurante' en el nivel raíz del usuario
+    // y también un objeto 'Restaurante'. Seamos flexibles.
+    if (user && user.id_restaurante) {
+        return user.id_restaurante;
+    }
+    if (user && user.Restaurante && user.Restaurante.id_restaurante) {
+        return user.Restaurante.id_restaurante;
+    }
+    return null;
+};
