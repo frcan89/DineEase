@@ -9,6 +9,7 @@ import { isLoggedIn } from "./services/authService";
 import UsersPage from "./pages/UsersPage/UsersPage";
 import RestaurantPage from "./pages/RestaurantPage/RestaurantPage"; // Importa la página de restaurantes
 import ProductsPage from './pages/ProductsPage/ProductsPage';
+import InventoryPage from './pages/InventoryPage/InventoryPage'; // Importa la página de inventario
 
 
 // Componente para Rutas Protegidas
@@ -50,6 +51,7 @@ function App() {
           <Route path="usuarios" element={<UsersPage />} />
           <Route path="restaurante" element={<RestaurantPage />} />
           <Route path="productos" element={<ProductsPage />} />
+          <Route path="inventario" element={<InventoryPage />} />
           {/* <Route path="reservas" element={<ReservasPage />} /> */}
           {/* ... otras rutas del dashboard */}
         </Route>

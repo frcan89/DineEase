@@ -11,6 +11,7 @@ import {
   FaSignOutAlt,
   FaUserAlt,
   FaBoxOpen,
+  FaArchive,
 } from "react-icons/fa";
 import { logout as authLogout } from "../../services/authService"; // Importa tu función de logout
 import { IoRestaurantOutline } from "react-icons/io5";
@@ -20,6 +21,7 @@ import { IoRestaurantOutline } from "react-icons/io5";
 const menuItems = [
   { path: "/dashboard", icon: <FaHome />, label: "Inicio" },
   { path: '/dashboard/productos', icon: <FaBoxOpen />, label: 'Productos' },
+  {path: "/dashboard/inventario", icon: <FaArchive />, label: "Inventario" },
   { path: "/dashboard/pedidos", icon: <FaUtensils />, label: "Pedidos" },
   { path: "/dashboard/reservas", icon: <FaCalendarAlt />, label: "Reservas" },
   { path: "/dashboard/menu", icon: <FaBook />, label: "Menú" },

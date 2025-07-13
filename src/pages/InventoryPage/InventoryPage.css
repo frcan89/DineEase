@@ -1,0 +1,98 @@
+/* src/pages/InventoryPage/InventoryPage.css */
+
+.inventory-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.inventory-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Reutilizar estilos de tabla de ProductsPage.css si es posible, o copiarlos aquí */
+.inventory-table-wrapper {
+    overflow-x: auto;
+    background-color: #1E1E1E;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.inventory-table th, 
+.inventory-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #2d2d2d;
+    white-space: nowrap;
+}
+
+/* ... (copiar/reutilizar el resto de estilos de tabla de ProductsPage.css) ... */
+.inventory-table th { 
+    background-color: #2a2a2a;
+    color: #F47C34;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+    position: sticky; /* Cabeceras pegajosas si hay scroll vertical */
+    top: 0;
+    z-index: 1;
+}
+.inventory-table tr:hover {  background-color: #333333; }
+
+/* Estilo específico para el stock */
+.stock-level {
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.stock-ok { background-color: rgba(92, 184, 92, 0.2); color: #5cb85c; }
+.stock-low { background-color: rgba(244, 124, 52, 0.2); color: #F47C34; }
+.stock-out { background-color: rgba(255, 82, 82, 0.2); color: #FF5252; }
+
+/* Estilos responsivos (similares a ProductsPage.css) */
+@media screen and (max-width: 768px) {
+    .inventory-table-wrapper { overflow-x: auto; /* Permite scroll horizontal en la tabla si es muy ancha */
+    background-color: #1E1E1E;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+    .inventory-table, .inventory-table thead, .inventory-table tbody, .inventory-table tr {
+        display: block;
+    }
+    .inventory-table thead { display: none; }
+    .inventory-table tr {background-color: #1E1E1E;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        padding: 10px;
+    }
+    .inventory-table td { 
+        display: flex; /* Usar flex para alinear etiqueta y valor */
+        justify-content: space-between; /* Pone la etiqueta a la izquierda y el valor a la derecha */
+        align-items: center;
+        padding: 10px 5px;
+        text-align: right;
+        border-bottom: 1px solid #333;
+        white-space: normal; 
+    }
+    .inventory-table td::before { 
+        content: attr(data-label);
+        font-weight: bold;
+        color: #F47C34;
+        text-align: left;
+        padding-right: 10px;
+    }
+}
