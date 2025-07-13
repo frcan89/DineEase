@@ -8,6 +8,8 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"; // <--- IMPORTA LA
 import { isLoggedIn } from "./services/authService";
 import UsersPage from "./pages/UsersPage/UsersPage";
 import RestaurantPage from "./pages/RestaurantPage/RestaurantPage"; // Importa la página de restaurantes
+import ProductsPage from './pages/ProductsPage/ProductsPage';
+
 
 // Componente para Rutas Protegidas
 const ProtectedRoute = ({ children }) => {
@@ -47,6 +49,7 @@ function App() {
           <Route index element={<DashboardHomePage />} />
           <Route path="usuarios" element={<UsersPage />} />
           <Route path="restaurante" element={<RestaurantPage />} />
+          <Route path="productos" element={<ProductsPage />} />
           {/* <Route path="reservas" element={<ReservasPage />} /> */}
           {/* ... otras rutas del dashboard */}
         </Route>
