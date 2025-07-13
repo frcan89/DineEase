@@ -1,12 +1,13 @@
 // src/App.jsx
-import React from 'react';
-import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
-import LoginPage from './pages/LoginPage/LoginPage';
-import DashboardLayout from './layouts/DashboardLayout/DashboardLayout'; // Importa el layout
-import DashboardHomePage from './pages/DashboardPage/DashboardHomePage'; // Importa la página de inicio del dashboard
-import NotFoundPage from './pages/NotFoundPage/NotFoundPage'; // <--- IMPORTA LA PÁGINA 404
-import { isLoggedIn } from './services/authService';
-import UsersPage from './pages/UsersPage/UsersPage'; 
+import React from "react";
+import { Routes, Route, Navigate, Outlet } from "react-router-dom";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import DashboardLayout from "./layouts/DashboardLayout/DashboardLayout"; // Importa el layout
+import DashboardHomePage from "./pages/DashboardPage/DashboardHomePage"; // Importa la página de inicio del dashboard
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"; // <--- IMPORTA LA PÁGINA 404
+import { isLoggedIn } from "./services/authService";
+import UsersPage from "./pages/UsersPage/UsersPage";
+import RestaurantPage from "./pages/RestaurantPage/RestaurantPage"; // Importa la página de restaurantes
 
 // Componente para Rutas Protegidas
 const ProtectedRoute = ({ children }) => {
@@ -27,14 +28,16 @@ const DashboardRoutesWrapper = () => {
 
 function App() {
   return (
-    <> {/* Fragmento para el body (si aplicas estilos al body desde JS) */}
+    <>
+      {" "}
+      {/* Fragmento para el body (si aplicas estilos al body desde JS) */}
       {/* <div className={isDashboardRoute ? "dashboard-body" : ""}>  // Lógica condicional para clase de body si es necesario */}
       <Routes>
         <Route path="/login" element={<LoginPage />} />
-        
+
         {/* Rutas del Dashboard anidadas bajo ProtectedRoute y DashboardRoutesWrapper */}
-        <Route 
-          path="/dashboard" 
+        <Route
+          path="/dashboard"
           element={
             <ProtectedRoute>
               <DashboardRoutesWrapper />
@@ -43,6 +46,7 @@ function App() {
         >
           <Route index element={<DashboardHomePage />} />
           <Route path="usuarios" element={<UsersPage />} />
+          <Route path="restaurante" element={<RestaurantPage />} />
           {/* <Route path="reservas" element={<ReservasPage />} /> */}
           {/* ... otras rutas del dashboard */}
         </Route>
@@ -51,7 +55,11 @@ function App() {
         <Route
           path="/"
           element={
-            isLoggedIn() ? <Navigate to="/dashboard" replace /> : <Navigate to="/login" replace />
+            isLoggedIn() ? (
+              <Navigate to="/dashboard" replace />
+            ) : (
+              <Navigate to="/login" replace />
+            )
           }
         />
         <Route path="*" element={<NotFoundPage />} />

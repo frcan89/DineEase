@@ -1,0 +1,60 @@
+.restaurant-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px; /* Añadido para que no esté pegado a los bordes del main-content-area */
+}
+
+.restaurant-container h1 {
+  /* Sobreescribe el H1 del Header si es necesario, o usa un H2 */
+  color: #ffffff;
+  text-align: center; /* El Header del Dashboard ya centra el título */
+  margin-bottom: 20px; /* Añadido para separar del botón */
+}
+
+.restaurant-header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.restaurant-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #1e1e1e; /* Fondo base para la tabla */
+  border-radius: 8px; /* Bordes redondeados para la tabla */
+  overflow: hidden; /* Para que el border-radius aplique a th/td */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.restaurant-table th,
+.restaurant-table td {
+  padding: 12px 15px; /* Ajuste de padding */
+  text-align: left;
+  border-bottom: 1px solid #2d2d2d; /* Borde más sutil */
+}
+
+.restaurant-table th {
+  background-color: #2a2a2a; /* Un poco más oscuro para cabeceras */
+  color: #f47c34;
+  font-weight: 500;
+  text-transform: uppercase; /* Opcional */
+  font-size: 14px; /* Opcional */
+}
+
+/* Quitar el fondo de nth-child si la tabla ya tiene fondo #1E1E1E */
+/* .restaurant-table tr:nth-child(even) {
+    background-color: #1E1E1E; 
+} */
+
+.restaurant-table tr:hover {
+  background-color: #333333;
+}
+.restaurant-table tr:last-child td {
+  border-bottom: none; /* Quitar borde inferior de la última fila */
+}
+
+.error-message-restaurants {
+  color: #ff5252;
+}
