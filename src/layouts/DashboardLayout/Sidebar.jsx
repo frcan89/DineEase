@@ -4,7 +4,6 @@ import { NavLink, useNavigate } from "react-router-dom"; // Importa useNavigate
 import {
   FaHome,
   FaUtensils,
-  FaCalendarAlt,
   FaBook,
   FaChartBar,
   FaCog,
@@ -22,17 +21,15 @@ const menuItems = [
   { path: "/dashboard", icon: <FaHome />, label: "Inicio" },
   { path: '/dashboard/productos', icon: <FaBoxOpen />, label: 'Productos' },
   {path: "/dashboard/inventario", icon: <FaArchive />, label: "Inventario" },
+  { path: "/dashboard/recetas", icon: <FaBook />, label: "Recetas" },
+  { path: "/dashboard/menus", icon: <FaBook />, label: "Menú" },
   { path: "/dashboard/pedidos", icon: <FaUtensils />, label: "Pedidos" },
-  { path: "/dashboard/reservas", icon: <FaCalendarAlt />, label: "Reservas" },
-  { path: "/dashboard/menu", icon: <FaBook />, label: "Menú" },
-  { path: "/dashboard/analiticas", icon: <FaChartBar />, label: "Analíticas" },
   { path: "/dashboard/usuarios", icon: <FaUserAlt />, label: "Usuarios" },
-  { path: "/dashboard/configuracion", icon: <FaCog />, label: "Configuración" },
-  {
+  /*{
     path: "/dashboard/restaurante",
     icon: <IoRestaurantOutline />,
     label: "Restaurante",
-  },
+  },*/
 ];
 
 const Sidebar = () => {

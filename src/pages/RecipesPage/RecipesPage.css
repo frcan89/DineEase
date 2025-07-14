@@ -1,0 +1,14 @@
+/* src/pages/RecipesPage/RecipesPage.css */
+/* La mayoría de los estilos (container, header, botones, tabla responsiva) se pueden reutilizar de ProductsPage.css */
+/* Solo se muestran aquí las clases específicas si es necesario, pero la estructura es la misma. */
+.recipes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.recipes-header-actions { /* ... */ }
+.create-recipe-btn { /* ... */ }
+.recipes-table-wrapper { /* ... */ }
+.recipes-table { /* ... */ }
+/* etc. */

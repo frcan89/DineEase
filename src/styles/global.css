@@ -1,0 +1,281 @@
+/* src/styles/global.css */
+
+/* === VARIABLES DE COLOR Y ESTILOS BASE === */
+:root {
+    --primary-color: #F47C34;
+    --primary-color-hover: #FFB380;
+    --background-dark: #121212;
+    --surface-dark: #1E1E1E;
+    --surface-light: #2D2D2D;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B0B0;
+    --border-color: #444;
+    --success-color: #5cb85c;
+    --error-color: #FF5252;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* === CLASES DE CONTENEDOR Y LAYOUT === */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-header-actions {
+    display: flex;
+    justify-content: flex-end; /* Alinea el botón a la derecha */
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.order-status-badge{
+    margin: auto;
+    margin-bottom: 1.5rem;
+    width: 50%;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* === BOTONES === */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-primary);
+}
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--primary-color-hover);
+}
+
+.btn-secondary {
+    background-color: var(--surface-light);
+    color: var(--text-primary);
+}
+.btn-secondary:hover:not(:disabled) {
+    background-color: var(--border-color);
+}
+
+.btn-danger {
+    background-color: var(--error-color);
+    color: var(--text-primary);
+}
+.btn-danger:hover:not(:disabled) {
+    background-color: #ff7b7b;
+}
+
+.btn:disabled {
+    background-color: #2D2D2D;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* === TABLAS RESPONSIVAS === */
+.responsive-table-wrapper {
+    overflow-x: auto;
+    background-color: var(--surface-dark);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.responsive-table th, 
+.responsive-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--surface-light);
+    white-space: nowrap;
+}
+
+.responsive-table th {
+    background-color: #2a2a2a;
+    color: var(--primary-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.responsive-table tr:hover {
+    background-color: #333333;
+}
+
+.responsive-table tr:last-child td {
+    border-bottom: none;
+}
+
+.action-btn-group {
+    display: flex;
+    gap: 8px;
+}
+.action-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+/* Media Query para tablas responsivas */
+@media screen and (max-width: 768px) {
+    .responsive-table-wrapper {
+        overflow-x: visible;
+        background: none;
+        box-shadow: none;
+    }
+
+    .responsive-table,
+    .responsive-table thead,
+    .responsive-table tbody,
+    .responsive-table th,
+    .responsive-table td,
+    .responsive-table tr {
+        display: block;
+    }
+    
+    .responsive-table thead {
+        display: none;
+    }
+    
+    .responsive-table tr {
+        background-color: var(--surface-dark);
+        border-radius: 8px;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        padding: 10px;
+    }
+
+    .responsive-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 5px;
+        text-align: right;
+        border-bottom: 1px solid var(--surface-light);
+        white-space: normal;
+    }
+    .responsive-table td:last-child { border-bottom: 0; }
+    .responsive-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: var(--primary-color);
+        text-align: left;
+        padding-right: 10px;
+    }
+
+    .page-header-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .btn.btn-full-width-mobile {
+        width: 100%;
+    }
+}
+
+/* === MODALES === */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+.modal-content {
+    background-color: var(--surface-dark);
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+.modal-close-btn { 
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #B0B0B0;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+ }
+.modal-content h2 { 
+    color: #F47C34;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 22px;
+}
+.modal-error-message { 
+    background-color: rgba(255, 82, 82, 0.1);
+    color: #FF5252;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid #FF5252;
+    font-size: 14px;
+ }
+/* ... (Copiar todos los estilos de modal de UserFormModal.css y adaptarlos con variables CSS) ... */
+
+/* === FORMULARIOS === */
+.form-group { /*...*/ }
+.form-group label { /*...*/ }
+.form-group input, .form-group select, .form-group textarea { /*...*/ }
+/* ... (Copiar todos los estilos de formulario de UserFormModal.css) ... */
+
+/* === MENSAJES Y ESTADOS === */
+.loading-message, .error-message {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: var(--text-secondary);
+}
+.error-message { color: var(--error-color); }
+
+.status-indicator {
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 13px;
+}
+.status-ok { background-color: rgba(92, 184, 92, 0.2); color: var(--success-color); }
+.status-low { background-color: rgba(244, 124, 52, 0.2); color: var(--primary-color); }
+.status-out { background-color: rgba(255, 82, 82, 0.2); color: var(--error-color); }

@@ -183,21 +183,73 @@ body.dashboard-body { /* Aplicar a un div wrapper o directamente al body */
 }
 
 .sidebar {
-    /* ... (tus estilos existentes) ... */
+    width: 250px;
+    background-color: #1E1E1E;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    position: fixed; /* Mantiene el sidebar fijo */
+    left: 0;
+    top: 0;
+    
+    /* --- Flexbox para organizar el contenido interno --- */
     display: flex;
-    flex-direction: column; /* Ya debería estar así para el logo y nav */
+    flex-direction: column;
+    gap: 20px; /* Espacio entre logo, nav y logout */
 }
 
+.sidebar-logo h2 {
+    color: #F47C34;
+    text-align: center;
+    margin: 0; /* Quitar márgenes por defecto */
+}
+
+/* --- ESTA ES LA CLAVE --- */
 .sidebar-nav {
-    flex-grow: 1; /* Hace que la navegación ocupe el espacio disponible, empujando el logout hacia abajo */
+    flex: 1; /* Hace que este contenedor ocupe todo el espacio vertical disponible */
+    overflow-y: auto; /* AÑADE EL SCROLL VERTICAL SOLO CUANDO SEA NECESARIO */
+    padding-right: 10px; /* Espacio para la barra de scroll para que no pegue a los iconos/texto */
+    margin-right: -10px; /* Compensa el padding para mantener el ancho visual */
+}
+/* Personalización de la barra de scroll (opcional pero recomendado para temas oscuros) */
+.sidebar-nav::-webkit-scrollbar {
+    width: 6px;
+}
+.sidebar-nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+.sidebar-nav::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 10px;
+}
+.sidebar-nav::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
 }
 
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 15px;
+}
+
+.sidebar-nav a {
+    /* ... tus estilos de enlace existentes ... */
+}
+
+/* El botón de logout se mantendrá al final */
 .sidebar-logout {
-    margin-top: auto; /* Empuja el botón de logout al final del sidebar si .sidebar-nav no usa flex-grow */
-    padding-top: 20px; /* Espacio arriba del botón */
-    border-top: 1px solid #2D2D2D; /* Línea separadora opcional */
+    margin-top: auto; /* Esto ya no es necesario si usas flexbox y flex:1 en .sidebar-nav */
+    padding-top: 15px; /* Espacio separador */
+    border-top: 1px solid #2D2D2D;
 }
 
+.logout-button {
+    /* ... tus estilos del botón de logout ... */
+}
 .logout-button {
     background-color: transparent; /* O un color que desees */
     color: #B0B0B0;

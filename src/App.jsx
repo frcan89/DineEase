@@ -10,8 +10,13 @@ import UsersPage from "./pages/UsersPage/UsersPage";
 import RestaurantPage from "./pages/RestaurantPage/RestaurantPage"; // Importa la página de restaurantes
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import InventoryPage from './pages/InventoryPage/InventoryPage'; // Importa la página de inventario
+import RecipesPage from './pages/RecipesPage/RecipesPage'; // Importa la página de recetas
+import MenusPage from './pages/MenusPage/MenusPage';
+import MenuDetailPage from './pages/MenuDetailPage/MenuDetailPage';
+import OrdersPage from './pages/OrdersPage/OrdersPage';
+import OrderDetailPage from './pages/OrderDetailPage/OrderDetailPage';
 
-
+import './styles/global.css'; // Importa tus estilos globales
 // Componente para Rutas Protegidas
 const ProtectedRoute = ({ children }) => {
   if (!isLoggedIn()) {
@@ -52,8 +57,11 @@ function App() {
           <Route path="restaurante" element={<RestaurantPage />} />
           <Route path="productos" element={<ProductsPage />} />
           <Route path="inventario" element={<InventoryPage />} />
-          {/* <Route path="reservas" element={<ReservasPage />} /> */}
-          {/* ... otras rutas del dashboard */}
+          <Route path="recetas" element={<RecipesPage />} />
+          <Route path="menus" element={<MenusPage />} />
+          <Route path="menus/:menuId" element={<MenuDetailPage />} />
+          <Route path="pedidos" element={<OrdersPage />} />
+          <Route path="pedidos/:orderId" element={<OrderDetailPage />} />
         </Route>
 
         {/* Ruta por defecto */}
